@@ -1,14 +1,20 @@
 import { useState } from "react";
+import ToDo from "./Todo";
+import Food from "./Food";
 
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const time = 50;
 
   return (
     <>
       <h1>React Cire Concepts</h1>
-      <Student></Student>
+      <ToDo task="Learn React" isDone={true} time={time}></ToDo>
+      <ToDo task="Revise JS" isDone={false}></ToDo>
+      <ToDo task="Take a shower" isDone={true}></ToDo>
+      <Food foodName = "Banana" isEat = {true}></Food>
+      {/* <Student></Student>
       <Student></Student>
       <Person name="shafrin Ahamed" age="27"></Person>
       <Developer name="shakib" tech="react"></Developer>
@@ -18,33 +24,32 @@ function App() {
       <Player name="Mushi" runs="5,000"></Player>
       <Salami event="Rojar Eid" amount = "500"></Salami>
       <Salami event="Graduation" amount = "10000"></Salami>
-      <Books bookName = "Physics" division = "Science"></Books>
+      <Books bookName = "Physics" division = "Science"></Books> */}
     </>
   );
 }
 
-function Books({bookName, division}){
+function Books({ bookName, division }) {
   return (
     <div className="student">
       <p>Books Name: {bookName} </p>
       <p>Class: {division}</p>
     </div>
-  )
+  );
 }
 
-function Salami({event, amount}){
+function Salami({ event, amount }) {
   return (
     <div className="student">
       <p>Salami For: {event}</p>
       <p>Amount: {amount} TK</p>
-
     </div>
   );
 }
 
 // const {name, runs} = {name: "tamim", runs: "10,000"};
 
-function Player({name, runs}) {
+function Player({ name, runs }) {
   // console.log(props);
   return (
     <div className="student">
