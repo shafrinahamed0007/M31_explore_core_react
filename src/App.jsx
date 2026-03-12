@@ -1,19 +1,48 @@
 import { useState } from "react";
 import ToDo from "./Todo";
 import Food from "./Food";
+import Actor from "./Actor";
+import Singer from "./Singer";
 
 import "./App.css";
 
 function App() {
-  const time = 50;
+  // const time = 50;
+
+  const actors = [
+    "Bappa Raj",
+    "Omar Sunny",
+    "Salman Shah",
+    "Jasim",
+    "Anwar",
+    "Raaj Rajjak",
+  ];
+  const singer = [
+    { id: 1, name: "Dr. Mahfuz", age: 68 },
+
+    { id: 2, name: "Tahsan", age: 54 },
+
+    {
+      id: 3,
+      name: "Shuvro Deb",
+      age: 57,
+    },
+  ];
 
   return (
     <>
       <h1>React Cire Concepts</h1>
-      <ToDo task="Learn React" isDone={true} time={time}></ToDo>
+      {
+        singer.map(singer => <Singer singer={singer}></Singer> )
+      }
+      {actors.map((actor) => (
+        <Actor actor={actor}></Actor>
+      ))}
+
+      {/* <ToDo task="Learn React" isDone={true} time={time}></ToDo>
       <ToDo task="Revise JS" isDone={false} time={time}></ToDo>
       <ToDo task="Take a shower" isDone={true} time={time}></ToDo>
-      <Food foodName = "Banana" isEat = {true}></Food>
+      <Food foodName = "Banana" isEat = {true}></Food> */}
       {/* <Student></Student>
       <Student></Student>
       <Person name="shafrin Ahamed" age="27"></Person>
